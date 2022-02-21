@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+    <head>
+        <title>Controle</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </head>
+    <body>
+      <div class="container mt-4">
+        <form action="submit", method="POST"> {% csrf_token%}
+            <h2>SOS PET</h2>
+            <div class="form-group">
+                   <label for="username">Username:</label>
+                   <input type="text" class="form-control" placeholder="Enter your username" id="username" name="username">
+            </div>
+
+            <div class="form-group">
+                   <label for="password">Password:</label>
+                   <input type="password" class="form-control" placeholder="Enter password" id="password" name="password">
+            </div>
+ <!--div class="form-group form-check">
+   <label class="form-check-label">
+     <input class="form-check-input" type="checkbox"> Remember me
+   </label>
+ </--div -->
+            <div>
+                {% for message in messages %}
+                   <div class="alert alert-danger">
+                       <strong>Error!</strong> {{ message }}
+                   </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+   </div>
+    </body>
+</html>

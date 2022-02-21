@@ -1,0 +1,19 @@
+.main-footer{
+    background-color: #9fd25f;
+}
+
+.rights{
+    background-color: #82b641;
+}
+
+body{
+    background-image: url(../img/slider/1900x1000.jpg);
+}
+
+.content {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

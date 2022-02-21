@@ -1,0 +1,20 @@
+{% extends 'controle/base.html' %}
+
+{% block title %}Sair{% endblock %}
+
+{% block content %}
+
+<div class="content container text-white">
+    <div class="row">
+        <div class="col-md-6 m-lg-2">
+            <p>Você tem certeza que deseja sair?</p>
+            <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                <button class="btn btn-danger m-lg-2" type="submit">Sair</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+  
+{% endblock %}
